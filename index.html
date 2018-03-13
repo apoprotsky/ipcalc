@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Калькулятор IP - Орион-Медиа</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.7/angular-material.min.css">
+    <link rel="stylesheet" href="/app.css">
+</head>
+<body ng-app="ipcalc" ng-controller="controller" ng-cloak layout="row">
+
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left" hide-print
+        md-is-locked-open="$mdMedia('gt-sm')">
+
+        <header class="t-c">
+            <a ng-href="/">
+                <!--<img src="img/icons/angular-logo.svg" alt="" />-->
+                <h1 class="md-heading">Орион-Медиа</h1>
+            </a>
+        </header>
+
+    </md-sidenav>
+
+    <div layout="column" flex>
+        <md-toolbar md-whiteframe="2" layout="row" layout-align="none center">
+            <h2 layout-margin>Калькулятор IP</h2>
+        </md-toolbar>
+        <md-content layout="column" layout-padding>
+            <div class="app" md-whiteframe="1" layout-margin>
+
+                <div layout="row">
+                    <md-input-container class="md-block" flex>
+                        <label>Адрес</label>
+                        <input ng-model="input.ip" ng-change="update()">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                        <label>Маска</label>
+                        <input type="number" min="1" max="32" ng-model="input.mask" ng-change="update()">
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-xs="row">
+                    <div layout="row" flex="grow">
+                        <md-input-container class="md-block m-t-none m-b-none" flex>
+                            <label>Cеть</label>
+                            <input ng-model="dec.net" readonly>
+                        </md-input-container>
+                        <md-input-container class="md-block m-t-none m-b-none" flex>
+                            <label>Хостов</label>
+                            <input ng-model="dec.hosts" readonly>
+                        </md-input-container>
+                    </div>
+                    <md-input-container class="md-block m-t-none m-b-none" flex="noshrink">
+                        <input class="app-bin" ng-model="bin.net" readonly>
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block m-t-none m-b-none" flex="grow">
+                        <label>Прямая маска сети</label>
+                        <input ng-model="dec.mask" readonly>
+                    </md-input-container>
+                    <md-input-container class="md-block m-t-none m-b-none" flex="noshrink">
+                        <input class="app-bin" ng-model="bin.mask" readonly>
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block m-t-none m-b-none" flex="grow">
+                        <label>Обратная маска сети</label>
+                        <input ng-model="dec.wildcard" readonly>
+                    </md-input-container>
+                    <md-input-container class="md-block m-t-none m-b-none" flex="noshrink">
+                        <input class="app-bin" ng-model="bin.wildcard" readonly>
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block m-t-none m-b-none" flex="grow">
+                        <label>Широковещательный адрес</label>
+                        <input ng-model="dec.broadcast" readonly>
+                    </md-input-container>
+                    <md-input-container class="md-block m-t-none m-b-none" flex="noshrink">
+                        <input class="app-bin" ng-model="bin.broadcast" readonly>
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block m-t-none m-b-none" flex="grow">
+                        <label>Минимальный адрес хоста</label>
+                        <input ng-model="dec.min" readonly>
+                    </md-input-container>
+                    <md-input-container class="md-block m-t-none m-b-none" flex="noshrink">
+                        <input class="app-bin" ng-model="bin.min" readonly>
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block m-t-none m-b-none" flex="grow">
+                        <label>Максимальный адрес хоста</label>
+                        <input ng-model="dec.max" readonly>
+                    </md-input-container>
+                    <md-input-container class="md-block m-t-none m-b-none" flex="noshrink">
+                        <input class="app-bin" ng-model="bin.max" readonly>
+                    </md-input-container>
+                </div>
+
+            </div>
+        </md-content>
+    </div>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.7/angular-material.min.js"></script>
+    <!-- Application  -->
+    <script src="/app.js"></script>
+
+</body>
+</html>
