@@ -41,7 +41,7 @@ Number.prototype.bin = function(pad) {
 
 
 /*global angular */
-let app = angular.module('ipcalc', ['ngMaterial'])
+let app = angular.module('app', ['ngMaterial'])
 
 app.config(function($mdThemingProvider, $mdIconProvider, $mdAriaProvider) {
     $mdThemingProvider
