@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.10/angular-material.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/6a900456.css">
+    <link rel="stylesheet" href="/0ce9f689.css">
 </head>
 <body ng-app="app" ng-controller="controller" ng-cloak layout="row">
 
     <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="2" style="overflow-x: hidden;" md-is-locked-open="isLockedOpenSidenav()">
         <a href="https://om.ua">
-            <img src="https://lib.om.ua/om-logo.svg" class="m-md" width="280" alt="logo" />
+            <img src="https://lib.om.ua/om-logo.svg" class="p-md logo" alt="logo" />
         </a>
         <md-content layout="column" style="overflow-x: hidden;">
             <md-button class="nowrap t-l m-none p-l-md" ng-href="">
@@ -26,38 +26,37 @@
         </md-content>
     </md-sidenav>
 
-    <div layout="column" flex>
-
+    <div layout="column" flex="grow">
         <md-toolbar md-whiteframe="2" layout="row" layout-align="none center">
             <md-button class="md-icon-button" ng-click="toggleSidenav()">
                 <md-icon md-font-icon="fa fa-2x fa-bars"></md-icon>
             </md-button>
-            <h2 flex layout-margin>Калькулятор IP</h2>
+            <h2 flex layout-margin class="nowrap title">Калькулятор IP</h2>
             <div>
                 
-                <md-button class="md-icon-button" style="width: 60px; height: 50px; padding-top: 14px;" ng-href="https://accounts.om.ua/token/#{{hashToken()}}" ng-hide="username">
+                <md-button class="md-icon-button" style="width: 60px; height: 50px; padding-top: 14px;" ng-href="https://accounts.om.ua/token#{{hashToken()}}" ng-hide="id">
                     <md-tooltip md-direction="bottom">Войти</md-tooltip>
                     <md-icon md-font-icon="fa fa-3x fa-sign-in"></md-icon>
                 </md-button>
-                <md-button class="md-icon-button" style="width: 45px; height: 45px; padding: 0;" ng-show="username" ng-href="https://accounts.om.ua">
+                <md-button class="md-icon-button" style="width: 45px; height: 45px; padding: 0;" ng-show="id" ng-href="https://accounts.om.ua">
                     <md-tooltip md-direction="bottom">{{account.firstname || account.username || '...'}} {{account.email}}</md-tooltip>
                     <img src="https://gravatar.com/avatar/{{account.gravatar}}?s=45">
                 </md-button>
             </div>
         </md-toolbar>
 
-        <md-content layout-padding class="md-background md-hue-2">
+        <md-content class="md-background md-hue-2" flex="grow" layout-xs="column" ng-class="{'p-md': isGt()}">
 
-            <div id="content" class="app m-t-md m-b-md p-md" md-whiteframe="1" md-colors="{ background: 'grey-A100' }" ng-view>
+            <div id="content" flex-xs="grow" class="app" ng-class="{'p-sm': !isGt(), 'p-md': isGt(), 'm-t-md': isGt(), 'm-b-md': isGt(), 'md-whiteframe-1dp': isGt()}" md-colors="{ background: 'grey-A100' }" ng-view>
 
             </div>
 
-            <div style="min-height: 1px;">
+            <!--<div style="min-height: 1px;">-->
             <!--
                 Firefox margin-botton collapse fix
                 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
             -->
-            </div>
+            <!--</div>-->
 
         </md-content>
     </div>
@@ -72,7 +71,7 @@
     <!-- Angular Material Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.10/angular-material.min.js"></script>
     <!-- Application  -->
-    <script src="/bb2fea7c.js"></script>
+    <script src="/4d1f6d5e.js"></script>
 
 </body>
 </html>
