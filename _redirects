@@ -1,2 +1,2 @@
-/.well-known/acme-challenge/* /.well-known/acme-challenge/:splat 200
-/*                            /index.html                        200
+/      /index.html 200
+/token /index.html 200
