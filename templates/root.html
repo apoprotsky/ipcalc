@@ -1,85 +1,89 @@
-<div layout="row">
-    <md-input-container class="md-block" flex>
-        <label>Адрес</label>
-        <input ng-model="input.ip" ng-change="update()">
-    </md-input-container>
-    <md-input-container class="md-block" hide-xs flex>
-        <label>Маска</label>
-        <input ng-model="input.mask" ng-change="onChangeMask()">
-    </md-input-container>
-    <md-input-container class="md-block">
-        <label>Длина маски</label>
-        <input class="app-bits" type="number" min="1" max="32" ng-model="input.bits" ng-change="onChangeBits()">
-    </md-input-container>
-</div>
+<div class="app" ng-class="{'p-sm': !isGt(), 'p-md': isGt(), 'm-t-md': isGt(), 'm-b-md': isGt(), 'md-whiteframe-1dp': isGt()}" md-colors="{ background: 'grey-A100' }">
 
-<div layout="row">
-    <md-input-container class="md-block m-t-none m-b-none" flex>
-        <label>Адресов</label>
-        <input ng-model="dec.addresses" readonly>
-    </md-input-container>
-    <md-input-container class="md-block m-t-none m-b-none" flex>
-        <label>Хостов</label>
-        <input ng-model="dec.hosts" readonly>
-    </md-input-container>
-</div>
+    <div layout="row">
+        <md-input-container class="md-block" flex>
+            <label>Адрес</label>
+            <input ng-model="input.ip" ng-change="update()">
+        </md-input-container>
+        <md-input-container class="md-block" hide-xs flex>
+            <label>Маска</label>
+            <input ng-model="input.mask" ng-change="onChangeMask()">
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Длина маски</label>
+            <input class="app-bits" type="number" min="1" max="32" ng-model="input.bits" ng-change="onChangeBits()">
+        </md-input-container>
+    </div>
 
-<div layout-gt-xs="row">
-    <md-input-container class="md-block m-t-none m-b-none" flex="grow">
-        <label>Cеть</label>
-        <input ng-model="dec.net" readonly>
-    </md-input-container>
-    <md-input-container class="md-block m-t-none m-b-none" hide-xs flex="noshrink">
-        <input class="app-bin" ng-model="bin.net" readonly>
-    </md-input-container>
-</div>
+    <div layout="row">
+        <md-input-container class="md-block m-t-none m-b-none" flex>
+            <label>Адресов</label>
+            <input ng-model="dec.addresses" readonly>
+        </md-input-container>
+        <md-input-container class="md-block m-t-none m-b-none" flex>
+            <label>Хостов</label>
+            <input ng-model="dec.hosts" readonly>
+        </md-input-container>
+    </div>
 
-<div layout-gt-xs="row">
-    <md-input-container class="md-block m-t-none m-b-none" flex="grow">
-        <label>Прямая маска сети</label>
-        <input ng-model="dec.mask" readonly>
-    </md-input-container>
-    <md-input-container class="md-block m-t-none m-b-none" hide-xs>
-        <input class="app-bin" ng-model="bin.mask" readonly>
-    </md-input-container>
-</div>
+    <div layout-gt-xs="row">
+        <md-input-container class="md-block m-t-none m-b-none" flex="grow">
+            <label>Cеть</label>
+            <input ng-model="dec.net" readonly>
+        </md-input-container>
+        <md-input-container class="md-block m-t-none m-b-none" hide-xs flex="noshrink">
+            <input class="app-bin" ng-model="bin.net" readonly>
+        </md-input-container>
+    </div>
 
-<div layout-gt-xs="row">
-    <md-input-container class="md-block m-t-none m-b-none" flex="grow">
-        <label>Обратная маска сети</label>
-        <input ng-model="dec.wildcard" readonly>
-    </md-input-container>
-    <md-input-container class="md-block m-t-none m-b-none" hide-xs>
-        <input class="app-bin" ng-model="bin.wildcard" readonly>
-    </md-input-container>
-</div>
+    <div layout-gt-xs="row">
+        <md-input-container class="md-block m-t-none m-b-none" flex="grow">
+            <label>Прямая маска сети</label>
+            <input ng-model="dec.mask" readonly>
+        </md-input-container>
+        <md-input-container class="md-block m-t-none m-b-none" hide-xs>
+            <input class="app-bin" ng-model="bin.mask" readonly>
+        </md-input-container>
+    </div>
 
-<div layout-gt-xs="row">
-    <md-input-container class="md-block m-t-none m-b-none" flex="grow">
-        <label>Широковещательный адрес</label>
-        <input ng-model="dec.broadcast" readonly>
-    </md-input-container>
-    <md-input-container class="md-block m-t-none m-b-none" hide-xs>
-        <input class="app-bin" ng-model="bin.broadcast" readonly>
-    </md-input-container>
-</div>
+    <div layout-gt-xs="row">
+        <md-input-container class="md-block m-t-none m-b-none" flex="grow">
+            <label>Обратная маска сети</label>
+            <input ng-model="dec.wildcard" readonly>
+        </md-input-container>
+        <md-input-container class="md-block m-t-none m-b-none" hide-xs>
+            <input class="app-bin" ng-model="bin.wildcard" readonly>
+        </md-input-container>
+    </div>
 
-<div layout-gt-xs="row">
-    <md-input-container class="md-block m-t-none m-b-none" flex="grow">
-        <label>Минимальный адрес хоста</label>
-        <input ng-model="dec.min" readonly>
-    </md-input-container>
-    <md-input-container class="md-block m-t-none m-b-none" hide-xs>
-        <input class="app-bin" ng-model="bin.min" readonly>
-    </md-input-container>
-</div>
+    <div layout-gt-xs="row">
+        <md-input-container class="md-block m-t-none m-b-none" flex="grow">
+            <label>Широковещательный адрес</label>
+            <input ng-model="dec.broadcast" readonly>
+        </md-input-container>
+        <md-input-container class="md-block m-t-none m-b-none" hide-xs>
+            <input class="app-bin" ng-model="bin.broadcast" readonly>
+        </md-input-container>
+    </div>
 
-<div layout-gt-xs="row">
-    <md-input-container class="md-block m-t-none m-b-none" flex="grow">
-        <label>Максимальный адрес хоста</label>
-        <input ng-model="dec.max" readonly>
-    </md-input-container>
-    <md-input-container class="md-block m-t-none m-b-none" hide-xs>
-        <input class="app-bin" ng-model="bin.max" readonly>
-    </md-input-container>
+    <div layout-gt-xs="row">
+        <md-input-container class="md-block m-t-none m-b-none" flex="grow">
+            <label>Минимальный адрес хоста</label>
+            <input ng-model="dec.min" readonly>
+        </md-input-container>
+        <md-input-container class="md-block m-t-none m-b-none" hide-xs>
+            <input class="app-bin" ng-model="bin.min" readonly>
+        </md-input-container>
+    </div>
+
+    <div layout-gt-xs="row">
+        <md-input-container class="md-block m-t-none m-b-none" flex="grow">
+            <label>Максимальный адрес хоста</label>
+            <input ng-model="dec.max" readonly>
+        </md-input-container>
+        <md-input-container class="md-block m-t-none m-b-none" hide-xs>
+            <input class="app-bin" ng-model="bin.max" readonly>
+        </md-input-container>
+    </div>
+
 </div>

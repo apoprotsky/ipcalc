@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.10/angular-material.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/0ce9f689.css">
+    <link rel="stylesheet" href="/b1ca032c.css">
 </head>
 <body ng-app="app" ng-controller="controller" ng-cloak layout="row">
 
@@ -27,14 +27,16 @@
     </md-sidenav>
 
     <div layout="column" flex="grow">
-        <md-toolbar md-whiteframe="2" layout="row" layout-align="none center">
+        <md-toolbar md-whiteframe="2" layout="row" layout-align="none center" style="max-width: 100vw">
             <md-button class="md-icon-button" ng-click="toggleSidenav()">
                 <md-icon md-font-icon="fa fa-2x fa-bars"></md-icon>
             </md-button>
-            <h2 flex layout-margin class="nowrap title">Калькулятор IP</h2>
+            <h1 class="md-headline nowrap title" flex layout-margin>
+                <a href="/" class="title">Калькулятор IP</a>
+            </h1>
             <div>
                 
-                <md-button class="md-icon-button" style="width: 60px; height: 50px; padding-top: 14px;" ng-href="https://accounts.om.ua/token#{{hashToken()}}" ng-hide="id">
+                <md-button class="md-icon-button" style="width: 60px; height: 50px; padding-top: 14px;" ng-href="https://accounts.om.ua/auth#{{authHash()}}" ng-hide="id">
                     <md-tooltip md-direction="bottom">Войти</md-tooltip>
                     <md-icon md-font-icon="fa fa-3x fa-sign-in"></md-icon>
                 </md-button>
@@ -45,18 +47,7 @@
             </div>
         </md-toolbar>
 
-        <md-content class="md-background md-hue-2" flex="grow" layout-xs="column" ng-class="{'p-md': isGt()}">
-
-            <div id="content" flex-xs="grow" class="app" ng-class="{'p-sm': !isGt(), 'p-md': isGt(), 'm-t-md': isGt(), 'm-b-md': isGt(), 'md-whiteframe-1dp': isGt()}" md-colors="{ background: 'grey-A100' }" ng-view>
-
-            </div>
-
-            <!--<div style="min-height: 1px;">-->
-            <!--
-                Firefox margin-botton collapse fix
-                https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
-            -->
-            <!--</div>-->
+        <md-content id="content" class="md-background md-hue-2" flex="grow" layout-xs="column" ng-class="{'p-md': isGt()}" ng-view>
 
         </md-content>
     </div>
@@ -71,7 +62,7 @@
     <!-- Angular Material Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.10/angular-material.min.js"></script>
     <!-- Application  -->
-    <script src="/4d1f6d5e.js"></script>
+    <script src="/9e68b697.js"></script>
 
 </body>
 </html>
