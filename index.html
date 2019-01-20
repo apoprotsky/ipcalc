@@ -5,10 +5,19 @@
     <title>Калькулятор IP - Орион-Медиа</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://lib.om.ua/icons/mstile-144x144.png">
+<link rel="manifest" href="https://lib.om.ua/icons/manifest.json">
+<link rel="apple-touch-icon" sizes="180x180" href="https://lib.om.ua/icons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lib.om.ua/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lib.om.ua/icons/favicon-16x16.png">
+<link rel="mask-icon" href="https://lib.om.ua/icons/safari-pinned-tab.svg" color="#444444">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://lib.om.ua/icons/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.10/angular-material.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/d0328311.css">
+    <link rel="stylesheet" href="/7eb4fbc4.css">
 </head>
 <body ng-app="app" ng-controller="controller" ng-cloak layout="row">
 
@@ -16,9 +25,16 @@
         <a href="https://om.ua">
             <img src="https://lib.om.ua/om-logo.svg" class="p-md logo" alt="logo" />
         </a>
-        <md-content layout="column" style="overflow-x: hidden;">
-            <md-button class="nowrap t-l m-none p-l-md" ng-href="">
+        <md-content layout="column" class="m-t-md" style="overflow-x: hidden;">
+            <md-button class="nowrap t-l m-none p-l-md" ng-class="{'md-primary': !route('/')}" ng-href="https://ipcalc.om.ua">
                 Калькулятор IP
+            </md-button>
+        <h1 class="md-title t-u m-t-xl p-l-md">Другие сервисы</h1>
+            <md-button class="md-primary nowrap t-l m-none p-l-md" ng-href="https://domains.om.ua">
+                Домены
+            </md-button>
+            <md-button class="md-primary nowrap t-l m-none p-l-md" ng-href="https://hosting.om.ua">
+                Хостинг
             </md-button>
             <md-button class="md-primary nowrap t-l m-none p-l-md" ng-href="https://passwords.om.ua">
                 Генератор паролей
@@ -47,22 +63,21 @@
             </div>
         </md-toolbar>
 
-        <md-content id="content" class="md-background md-hue-2" flex="grow" layout-xs="column" ng-class="{'p-md': isGt()}" ng-view>
-
-        </md-content>
+<md-content id="content" class="md-background md-hue-2" flex="grow" layout-xs="column" ng-class="{'p-md': isGt()}" ng-view>
+</md-content>
     </div>
 
     <!-- Angular Material requires Angular.js Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-messages.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-route.min.js"></script>
     <!-- Angular Material Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.10/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
     <!-- Application  -->
-    <script src="/709a9323.js"></script>
+    <script src="/4b5d5400.js"></script>
 
 </body>
 </html>
